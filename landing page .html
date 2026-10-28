@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora AI — Think Beyond Limits</title>
+    <meta name="description" content="Discover a smarter way to create, work and innovate with Nexora AI.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #080a13;
+            --panel: #111421;
+            --purple: #8b5cf6;
+            --cyan: #56d8f5;
+            --white: #f6f7ff;
+            --muted: #a2a7bd;
+            --border: rgba(255, 255, 255, .1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        .container {
+            width: min(1160px, 90%);
+            margin: auto
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand {
+            font-family: 'Space Grotesk', sans-serif
+        }
+
+        .gradient-text {
+            background: linear-gradient(100deg, #a78bfa, #56d8f5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 9px;
+            border: 1px solid transparent;
+            background: linear-gradient(100deg, #8b5cf6, #5965f5);
+            color: white;
+            font-weight: 700;
+            transition: .25s
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px #8b5cf644
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border-color: var(--border)
+        }
+
+        .btn-ghost:hover {
+            background: #ffffff0b;
+            box-shadow: none
+        }
+
+        .eyebrow {
+            color: var(--cyan);
+            font-size: .78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px
+        }
+
+        .section {
+            padding: 100px 0
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px
+        }
+
+        .section-head h2 {
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.15;
+            margin: 13px 0
+        }
+
+        .section-head p {
+            color: var(--muted)
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: #080a13dd;
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .navbar {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -1px
+        }
+
+        .brand span {
+            color: var(--purple)
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+            gap: 29px
+        }
+
+        .navlinks a {
+            font-size: .9rem;
+            color: #c8cbda;
+            transition: .2s
+        }
+
+        .navlinks a:hover {
+            color: white
+        }
+
+        .navright {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            color: white;
+            font-size: 1.7rem
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            padding: 90px 0 85px;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            left: -260px;
+            top: -160px;
+            background: #7954ff1c;
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -180px;
+            bottom: -200px;
+            background: #38bdf81a;
+            filter: blur(90px);
+            border-radius: 50%;
+            pointer-events: none
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+            position: relative;
+            z-index: 1
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #a78bfa55;
+            background: #8b5cf615;
+            color: #d9caff;
+            padding: 7px 13px;
+            border-radius: 30px;
+            font-size: .78rem
+        }
+
+        .pill i {
+            width: 7px;
+            height: 7px;
+            background: #56d8f5;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #56d8f5
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5.8vw, 5.3rem);
+            line-height: 1.03;
+            letter-spacing: -3px;
+            margin: 23px 0
+        }
+
+        .hero-copy {
+            max-width: 500px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 28px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap
+        }
+
+        .trust {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 30px;
+            color: var(--muted);
+            font-size: .85rem
+        }
+
+        .avatars {
+            display: flex
+        }
+
+        .avatars img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bg);
+            margin-left: -8px
+        }
+
+        .avatars img:first-child {
+            margin-left: 0
+        }
+
+        .hero-visual {
+            position: relative
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 465px;
+            object-fit: cover;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            filter: saturate(.85)
+        }
+
+        .photo-glow {
+            position: absolute;
+            inset: 10% 8%;
+            background: #8b5cf633;
+            filter: blur(65px);
+            z-index: -1
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 24px;
+            left: -30px;
+            background: #151929ed;
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 17px 20px;
+            box-shadow: 0 15px 45px #0005
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 1.15rem
+        }
+
+        .floating-card small {
+            color: var(--muted)
+        }
+
+        .stat-card {
+            position: absolute;
+            top: 24px;
+            right: -20px;
+            background: #151929ed;
+            border: 1px solid var(--border);
+            padding: 15px 18px;
+            border-radius: 12px
+        }
+
+        .stat-card b {
+            color: var(--cyan);
+            font-size: 1.4rem;
+            display: block
+        }
+
+        /* TRUST BAR */
+        .trustbar {
+            border-block: 1px solid var(--border);
+            padding: 24px 0;
+            background: #ffffff04
+        }
+
+        .trustbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .trustbar p {
+            font-size: .8rem;
+            color: var(--muted);
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+
+        .trustbar strong {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #b7bbcf;
+            font-size: 1.1rem
+        }
+
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .feature {
+            padding: 28px;
+            background: linear-gradient(145deg, #151827, #0d101b);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            transition: .3s
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+            border-color: #8b5cf677
+        }
+
+        .feature-icon {
+            width: 49px;
+            height: 49px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            background: #8b5cf622;
+            margin-bottom: 21px
+        }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: .93rem
+        }
+
+        .feature-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #bba5ff;
+            font-size: .9rem;
+            font-weight: 700
+        }
+
+        /* ABOUT */
+        .about {
+            background: linear-gradient(180deg, #0b0e18, #0c0f1b)
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px
+        }
+
+        .about-image-wrap {
+            position: relative
+        }
+
+        .about-image {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--border)
+        }
+
+        .about-badge {
+            position: absolute;
+            right: -15px;
+            bottom: 22px;
+            background: #151929;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 17px 21px
+        }
+
+        .about-badge b {
+            font-size: 1.6rem;
+            color: var(--cyan);
+            display: block
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            margin: 15px 0
+        }
+
+        .about-content>p {
+            color: var(--muted);
+            margin-bottom: 18px
+        }
+
+        .checklist {
+            display: grid;
+            gap: 13px;
+            margin: 25px 0
+        }
+
+        .checklist div {
+            display: flex;
+            gap: 11px;
+            align-items: center
+        }
+
+        .check {
+            color: var(--cyan);
+            font-weight: 700
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px
+        }
+
+        .step {
+            padding: 30px 25px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            position: relative;
+            background: #ffffff03
+        }
+
+        .step-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.7rem;
+            color: #8b5cf655;
+            font-weight: 700
+        }
+
+        .step h3 {
+            margin: 12px 0 9px
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: .93rem
+        }
+
+        /* SHOWCASE */
+        .showcase {
+            padding: 0 0 100px
+        }
+
+        .showcase-box {
+            position: relative;
+            overflow: hidden;
+            min-height: 330px;
+            border: 1px solid #8b5cf644;
+            border-radius: 23px;
+            padding: 60px;
+            background: radial-gradient(ellipse at 90% 20%, #6548c833, transparent 40%), linear-gradient(120deg, #15172a, #101522)
+        }
+
+        .showcase-box h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            max-width: 640px;
+            line-height: 1.15;
+            margin: 15px 0
+        }
+
+        .showcase-box p {
+            max-width: 550px;
+            color: var(--muted);
+            margin-bottom: 25px
+        }
+
+        .showcase-orb {
+            position: absolute;
+            right: 8%;
+            top: 18%;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #a78bfa, #6545d4 45%, #18203b 75%);
+            box-shadow: 0 0 90px #8b5cf655;
+            animation: float 5s ease-in-out infinite
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+        }
+
+        /* TESTIMONIALS */
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .review {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: #ffffff03
+        }
+
+        .stars {
+            color: #f6c86b;
+            letter-spacing: 3px;
+            margin-bottom: 15px
+        }
+
+        .review>p {
+            color: #c4c8d8;
+            font-size: .94rem;
+            margin-bottom: 22px
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .reviewer img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        .reviewer b {
+            display: block;
+            font-size: .92rem
+        }
+
+        .reviewer small {
+            color: var(--muted)
+        }
+
+        /* PRICING */
+        .pricing {
+            background: #0c0f1a
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .price-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: #ffffff03;
+            position: relative
+        }
+
+        .price-card.popular {
+            border-color: #8b5cf6;
+            background: linear-gradient(155deg, #8b5cf618, #ffffff03)
+        }
+
+        .popular-label {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            transform: translateY(-50%);
+            background: var(--purple);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: .72rem;
+            font-weight: 700
+        }
+
+        .price-card h3 {
+            font-size: 1.3rem
+        }
+
+        .price-card>p {
+            color: var(--muted);
+            font-size: .9rem;
+            margin: 10px 0 22px
+        }
+
+        .price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            letter-spacing: -1px
+        }
+
+        .price small {
+            font-size: .88rem;
+            color: var(--muted);
+            font-weight: 400;
+            letter-spacing: 0
+        }
+
+        .price-card .btn {
+            width: 100%;
+            margin: 20px 0
+        }
+
+        .price-features {
+            display: grid;
+            gap: 12px;
+            color: #c4c8d8;
+            font-size: .9rem
+        }
+
+        .price-features span:before {
+            content: "✓";
+            color: var(--cyan);
+            margin-right: 9px
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            gap: 12px
+        }
+
+        details {
+            padding: 20px 23px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #ffffff03
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px
+        }
+
+        summary:after {
+            content: "+";
+            color: var(--cyan);
+            font-size: 1.3rem
+        }
+
+        details[open] summary:after {
+            content: "−"
+        }
+
+        details p {
+            color: var(--muted);
+            padding-top: 15px;
+            font-size: .93rem
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 55px 0 23px;
+            border-top: 1px solid var(--border)
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-bottom: 35px
+        }
+
+        .footer-top p {
+            max-width: 360px;
+            color: var(--muted);
+            margin-top: 12px
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 23px;
+            flex-wrap: wrap;
+            color: #c4c8d8;
+            font-size: .9rem
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan)
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            color: var(--muted);
+            font-size: .82rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s, transform .65s
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                scroll-behavior: auto !important;
+                transition: none !important
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @media(max-width:950px) {
+            .navlinks {
+                gap: 15px
+            }
+
+            .navright .btn {
+                display: none
+            }
+
+            .hero-grid,
+            .about-grid {
+                gap: 35px
+            }
+
+            .hero-photo {
+                height: 390px
+            }
+
+            .stat-card {
+                right: -8px
+            }
+
+            .features-grid,
+            .reviews,
+            .price-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .feature:last-child,
+            .review:last-child {
+                grid-column: 1/-1
+            }
+
+            .showcase-orb {
+                opacity: .45;
+                right: -35px
+            }
+        }
+
+        @media(max-width:700px) {
+            .navbar {
+                height: 68px
+            }
+
+            .menu-toggle {
+                display: block
+            }
+
+            .navlinks {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                padding: 15px 5%;
+                background: #0d101b;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0
+            }
+
+            .navlinks.open {
+                display: flex
+            }
+
+            .navlinks a {
+                padding: 12px 0
+            }
+
+            .hero {
+                padding: 65px 0
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 12vw, 4.4rem);
+                letter-spacing: -2px
+            }
+
+            .hero-photo {
+                height: 350px
+            }
+
+            .floating-card {
+                left: -5px
+            }
+
+            .trustbar-inner {
+                justify-content: center
+            }
+
+            .trustbar p {
+                width: 100%;
+                text-align: center
+            }
+
+            .features-grid,
+            .steps,
+            .reviews,
+            .price-grid {
+                grid-template-columns: 1fr
+            }
+
+            .feature:last-child,
+            .review:last-child {
+                grid-column: auto
+            }
+
+            .section {
+                padding: 75px 0
+            }
+
+            .about-image {
+                height: 330px
+            }
+
+            .about-badge {
+                right: -5px
+            }
+
+            .showcase {
+                padding-bottom: 75px
+            }
+
+            .showcase-box {
+                padding: 32px 24px
+            }
+
+            .showcase-orb {
+                width: 110px;
+                height: 110px;
+                right: -20px;
+                top: 12%;
+                opacity: .3
+            }
+
+            .showcase-box h2,
+            .showcase-box p {
+                position: relative;
+                z-index: 1
+            }
+
+            .footer-top {
+                flex-direction: column
+            }
+
+            .footer-bottom {
+                flex-direction: column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="brand">nexora<span>.</span></a>
+
+            <nav class="navlinks" id="navlinks">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#how">How it works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <div class="navright">
+                <a href="#pricing" class="btn">Get Started ↗</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="reveal">
+                    <div class="pill"><i></i> Meet your new creative partner</div>
+                    <h1>Turn big ideas into <span class="gradient-text">real impact.</span></h1>
+                    <p class="hero-copy">
+                        Meet the smarter way to work. Nexora AI helps you create content,
+                        explore ideas and turn everyday tasks into extraordinary results.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#pricing" class="btn">Start Exploring ↗</a>
+                        <a href="#features" class="btn btn-ghost">Discover Features</a>
+                    </div>
+                    <div class="trust">
+                        <div class="avatars">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+                                alt="User" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+                                alt="User" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80"
+                                alt="User" loading="lazy">
+                        </div>
+                        <span>Built for curious minds and bold creators</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="photo-glow"></div>
+                    <img class="hero-photo"
+                        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
+                        alt="Abstract artificial intelligence technology artwork">
+                    <div class="floating-card">
+                        <strong>✦ Create without limits</strong>
+                        <small>Your next big idea starts here</small>
+                    </div>
+                    <div class="stat-card"><b>∞</b><span>Possibilities</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trustbar">
+            <div class="container trustbar-inner">
+                <p>Made for the next generation</p>
+                <strong>CREATORS</strong>
+                <strong>BUILDERS</strong>
+                <strong>STARTUPS</strong>
+                <strong>VISIONARIES</strong>
+            </div>
+        </div>
+
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow">One platform. Endless possibilities.</div>
+                    <h2>Everything you need to <span class="gradient-text">move faster.</span></h2>
+                    <p>Powerful tools designed to help you think clearly, create confidently and get more done.</p>
+                </div>
+
+                <div class="features-grid">
+                    <article class="feature reveal">
+                        <div class="feature-icon">✦</div>
+                        <h3>Smart Content</h3>
+                        <p>Turn a simple idea into engaging drafts, captions, blogs and fresh content concepts.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                    <article class="feature reveal">
+                        <div class="feature-icon">◈</div>
+                        <h3>Creative Studio</h3>
+                        <p>Explore visual directions and bring your creative projects to life with confidence.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                    <article class="feature reveal">
+                        <div class="feature-icon">⌘</div>
+                        <h3>Workflow Assistant</h3>
+                        <p>Organize ideas, structure your work and simplify repetitive everyday tasks.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                    <article class="feature reveal">
+                        <div class="feature-icon">◎</div>
+                        <h3>Research Companion</h3>
+                        <p>Break complex topics into manageable pieces and build a clearer understanding.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                    <article class="feature reveal">
+                        <div class="feature-icon">↗</div>
+                        <h3>Idea Accelerator</h3>
+                        <p>Brainstorm new approaches, compare possibilities and discover your next direction.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                    <article class="feature reveal">
+                        <div class="feature-icon">◇</div>
+                        <h3>One Simple Space</h3>
+                        <p>Keep your creative process clear with an interface built for focus and simplicity.</p>
+                        <a href="#how" class="feature-link">Explore feature ↗</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="container about-grid">
+                <div class="about-image-wrap reveal">
+                    <img class="about-image"
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+                        alt="Creative professional working with technology" loading="lazy">
+                    <div class="about-badge"><b>Think bigger.</b><span>Build smarter.</span></div>
+                </div>
+
+                <div class="about-content reveal">
+                    <div class="eyebrow">Why Nexora?</div>
+                    <h2>Less busywork.<br><span class="gradient-text">More breakthroughs.</span></h2>
+                    <p>
+                        Great ideas deserve more than endless tabs and repetitive tasks.
+                        Nexora brings your creative workflow into a cleaner, more focused experience.
+                    </p>
+                    <p>
+                        Whether you're a student, creator or business owner, the goal is simple:
+                        spend less time getting started and more time making progress.
+                    </p>
+                    <div class="checklist">
+                        <div><span class="check">✓</span> A simple, beginner-friendly experience</div>
+                        <div><span class="check">✓</span> Flexible tools for different creative tasks</div>
+                        <div><span class="check">✓</span> A responsive experience across devices</div>
+                    </div>
+                    <a href="#how" class="btn">See How It Works ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="how">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow">Simple by design</div>
+                    <h2>From idea to action in <span class="gradient-text">three steps.</span></h2>
+                    <p>A straightforward process that helps you start small and keep moving.</p>
+                </div>
+
+                <div class="steps">
+                    <article class="step reveal">
+                        <div class="step-number">01</div>
+                        <h3>Bring your idea</h3>
+                        <p>Start with a question, a rough thought or a challenge you want to solve.</p>
+                    </article>
+                    <article class="step reveal">
+                        <div class="step-number">02</div>
+                        <h3>Explore possibilities</h3>
+                        <p>Use creative tools to develop ideas, organize your approach and refine your plan.</p>
+                    </article>
+                    <article class="step reveal">
+                        <div class="step-number">03</div>
+                        <h3>Make it happen</h3>
+                        <p>Take your next step with a clearer direction and a more confident workflow.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <div class="container">
+                <div class="showcase-box reveal">
+                    <div class="showcase-orb"></div>
+                    <div class="eyebrow">Your next chapter starts now</div>
+                    <h2>Your imagination is the limit. <span class="gradient-text">Let's build something.</span></h2>
+                    <p>Give your ideas the space to grow. Explore a new way to work, create and think.</p>
+                    <a href="#pricing" class="btn">Find Your Plan ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow">Made for makers</div>
+                    <h2>Ideas deserve a better <span class="gradient-text">workspace.</span></h2>
+                    <p>Example testimonial cards to demonstrate the landing page design.</p>
+                </div>
+
+                <div class="reviews">
+                    <article class="review reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>“The interface feels clear and simple. I can imagine using a workspace like this to organize
+                            my creative projects.”</p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                                alt="Portrait of a reviewer" loading="lazy">
+                            <div><b>Olivia Carter</b><small>Content Creator · Sample review</small></div>
+                        </div>
+                    </article>
+                    <article class="review reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>“A clean design with a strong focus on usability. The kind of experience that makes a digital
+                            product feel approachable.”</p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+                                alt="Portrait of a reviewer" loading="lazy">
+                            <div><b>Daniel Brooks</b><small>Designer · Sample review</small></div>
+                        </div>
+                    </article>
+                    <article class="review reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>“I like how the experience brings different parts of the creative process together without
+                            making things feel complicated.”</p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80"
+                                alt="Portrait of a reviewer" loading="lazy">
+                            <div><b>Ryan Mitchell</b><small>Founder · Sample review</small></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing" id="pricing">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow">Simple options</div>
+                    <h2>Choose your <span class="gradient-text">starting point.</span></h2>
+                    <p>Illustrative pricing cards for this demo design. No payments are connected.</p>
+                </div>
+
+                <div class="price-grid">
+                    <article class="price-card reveal">
+                        <h3>Starter</h3>
+                        <p>For curious minds exploring new ideas.</p>
+                        <div class="price">Free <small>/ forever</small></div>
+                        <a href="#contact" class="btn btn-ghost plan-btn" data-plan="Starter">Get Started</a>
+                        <div class="price-features">
+                            <span>Basic creative tools</span>
+                            <span>Explore core features</span>
+                            <span>Beginner-friendly workspace</span>
+                        </div>
+                    </article>
+
+                    <article class="price-card popular reveal">
+                        <span class="popular-label">POPULAR</span>
+                        <h3>Pro</h3>
+                        <p>For creators ready to do more.</p>
+                        <div class="price">₹799 <small>/ month</small></div>
+                        <a href="#contact" class="btn plan-btn" data-plan="Pro">Choose Pro</a>
+                        <div class="price-features">
+                            <span>Expanded creative workflow</span>
+                            <span>More project flexibility</span>
+                            <span>Priority feature access</span>
+                        </div>
+                    </article>
+
+                    <article class="price-card reveal">
+                        <h3>Team</h3>
+                        <p>For teams building together.</p>
+                        <div class="price">₹1,999 <small>/ month</small></div>
+                        <a href="#contact" class="btn btn-ghost plan-btn" data-plan="Team">Choose Team</a>
+                        <div class="price-features">
+                            <span>Team-oriented workspace</span>
+                            <span>Shared project planning</span>
+                            <span>Flexible collaboration</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow">Questions, answered</div>
+                    <h2>Good to <span class="gradient-text">know.</span></h2>
+                    <p>Learn more about this demo landing page.</p>
+                </div>
+
+                <div class="faq-list reveal">
+                    <details>
+                        <summary>What is Nexora AI?</summary>
+                        <p>Nexora AI is a fictional technology brand used to demonstrate a modern AI product landing
+                            page.</p>
+                    </details>
+                    <details>
+                        <summary>Can I use this website on mobile?</summary>
+                        <p>Yes. The layout adjusts to mobile, tablet and desktop screen sizes.</p>
+                    </details>
+                    <details>
+                        <summary>Do the pricing buttons process payments?</summary>
+                        <p>No. This is a front-end design project. Real checkout requires a backend and a payment
+                            provider.</p>
+                    </details>
+                    <details>
+                        <summary>Can I change the content and images?</summary>
+                        <p>Yes. Edit the HTML text, image URLs, colors and prices to customize the project.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact" style="padding-top:0">
+            <div class="container">
+                <div class="showcase-box reveal">
+                    <div class="eyebrow">Ready to explore?</div>
+                    <h2>Make room for your <span class="gradient-text">next big idea.</span></h2>
+                    <p>Start with curiosity. Keep building with intention.</p>
+                    <button class="btn" id="contactBtn">Let's Get Started ↗</button>
+                    <p id="contactMessage" role="status" style="margin:15px 0 0"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <a class="brand" href="#home">nexora<span>.</span></a>
+                    <p>A concept landing page for a smarter, more creative digital future.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span id="year"></span> Nexora AI. Demo project.</span>
+                <span>Designed for ideas that move the world.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navlinks = document.getElementById("navlinks");
+
+        menuToggle.addEventListener("click", () => {
+            const opened = navlinks.classList.toggle("open");
+            menuToggle.textContent = opened ? "×" : "☰";
+            menuToggle.setAttribute("aria-expanded", String(opened));
+        });
+
+        navlinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navlinks.classList.remove("open");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        const observer = "IntersectionObserver" in window
+            ? new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 })
+            : null;
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            if (observer) observer.observe(element);
+            else element.classList.add("visible");
+        });
+
+        document.querySelectorAll(".plan-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                const plan = button.dataset.plan;
+                document.getElementById("contactMessage").textContent =
+                    plan + " selected! This is a demo — no subscription has been created.";
+            });
+        });
+
+        document.getElementById("contactBtn").addEventListener("click", () => {
+            document.getElementById("contactMessage").textContent =
+                "Thanks for exploring Nexora! This demo is ready for you to customize.";
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
